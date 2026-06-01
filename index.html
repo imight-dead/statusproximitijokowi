@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Performa Peserta - PROXIMITI 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1a2e4a 0%, #2d4a6f 50%, #4a6d8c 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            animation: particleFloat 15s infinite ease-in-out;
+        }
+
+        .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; animation-duration: 20s; }
+        .particle:nth-child(2) { left: 20%; top: 80%; animation-delay: -2s; animation-duration: 18s; }
+        .particle:nth-child(3) { left: 30%; top: 40%; animation-delay: -4s; animation-duration: 22s; }
+        .particle:nth-child(4) { left: 50%; top: 60%; animation-delay: -6s; animation-duration: 16s; }
+        .particle:nth-child(5) { left: 70%; top: 30%; animation-delay: -8s; animation-duration: 24s; }
+        .particle:nth-child(6) { left: 80%; top: 70%; animation-delay: -10s; animation-duration: 19s; }
+        .particle:nth-child(7) { left: 90%; top: 50%; animation-delay: -12s; animation-duration: 21s; }
+        .particle:nth-child(8) { left: 15%; top: 90%; animation-delay: -14s; animation-duration: 17s; }
+
+        @keyframes particleFloat {
+            0%, 100% { 
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0.3;
+            }
+            25% { 
+                transform: translateY(-80px) translateX(20px) scale(1.5);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-40px) translateX(-30px) scale(1);
+                opacity: 0.4;
+            }
+            75% { 
+                transform: translateY(-100px) translateX(10px) scale(1.2);
+                opacity: 0.5;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            max-width: 500px;
+            width: 100%;
+            overflow: hidden;
+            animation: containerSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes containerSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.97);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .banner {
+            width: 100%;
+            display: block;
+            animation: bannerReveal 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes bannerReveal {
+            from {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .content {
+            padding: 32px 36px 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+            animation: fadeUp 0.6s ease-out 0.3s both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header h1 {
+            color: #1a2e4a;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .header h2 {
+            color: #4a6d8c;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            animation: fadeUp 0.6s ease-out both;
+        }
+
+        .form-group:nth-child(1) { animation-delay: 0.4s; }
+        .form-group:nth-child(2) { animation-delay: 0.5s; }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1a2e4a;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 15px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-family: inherit;
+            color: #1a2e4a;
+            background: #f8fafc;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        input::placeholder {
+            color: #94a3b8;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231a2e4a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            background-size: 18px;
+            background-color: #f8fafc;
+            padding-right: 48px;
+        }
+
+        input:hover,
+        select:hover {
+            border-color: #cbd5e1;
+            background: #fff;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #2d4a6f;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(45, 74, 111, 0.12);
+        }
+
+        button {
+            width: 100%;
+            padding: 16px 28px;
+            background: linear-gradient(135deg, #1a2e4a 0%, #2d4a6f 100%);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 8px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease-out 0.6s both;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+            transition: left 0.6s ease;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px -8px rgba(26, 46, 74, 0.5);
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        button:active {
+            transform: translateY(-1px);
+        }
+
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .result {
+            margin-top: 28px;
+            padding: 28px;
+            border-radius: 18px;
+            text-align: center;
+            display: none;
+            animation: resultReveal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes resultReveal {
+            from {
+                opacity: 0;
+                transform: scale(0.92) translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .result.lolos {
+            background: linear-gradient(135deg, #1a2e4a 0%, #2d4a6f 100%);
+            color: white;
+        }
+
+        .result.remedial {
+            background: linear-gradient(135deg, #c1272d 0%, #e74c3c 100%);
+            color: white;
+        }
+
+        .result.error {
+            background: linear-gradient(135deg, #4a6d8c 0%, #6b8a9f 100%);
+            color: white;
+        }
+
+        .result h2 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+        }
+
+        .result > p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            line-height: 1.65;
+        }
+
+        .result .icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+            display: block;
+            animation: iconPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+        }
+
+        @keyframes iconPop {
+            from { 
+                transform: scale(0) rotate(-15deg); 
+                opacity: 0;
+            }
+            to { 
+                transform: scale(1) rotate(0deg); 
+                opacity: 1;
+            }
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 18px;
+            border-radius: 14px;
+            margin-top: 18px;
+            text-align: left;
+            animation: slideUp 0.4s ease-out 0.2s both;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-box p {
+            color: white;
+            margin: 10px 0;
+            font-size: 0.92rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .info-box p:first-child { margin-top: 0; }
+        .info-box p:last-child { margin-bottom: 0; }
+
+        .info-box strong {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        .info-box span {
+            font-weight: 700;
+            text-align: right;
+        }
+
+        .remedial-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 18px;
+            border-radius: 14px;
+            margin-top: 18px;
+            border: 2px dashed rgba(255, 255, 255, 0.35);
+            animation: slideUp 0.4s ease-out 0.3s both;
+        }
+
+        .remedial-box h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .remedial-box p {
+            font-size: 0.9rem;
+            margin: 6px 0;
+            line-height: 1.5;
+            opacity: 0.95;
+        }
+
+        .gt-contact {
+            background: white;
+            color: #1a2e4a;
+            padding: 14px 18px;
+            border-radius: 12px;
+            margin-top: 14px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+
+
+        /* Hover interactions for info items */
+        .info-box p {
+            padding: 8px 12px;
+            margin: 4px -12px;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+        }
+
+        .info-box p:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+
+
+
+        .lolos-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #38ef7d, #11d660);
+            color: #0a3d1c;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            margin-bottom: 14px;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            box-shadow: 0 4px 20px -4px rgba(56, 239, 125, 0.5);
+        }
+
+
+
+
+
+
+        .remedial-badge {
+            display: inline-block;
+            background: #fff;
+            color: #c1272d;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            margin-bottom: 14px;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive */
+        @media (max-width: 520px) {
+            .content {
+                padding: 24px 24px 32px;
+            }
+            
+            .header h1 {
+                font-size: 1.4rem;
+            }
+            
+            .result {
+                padding: 24px 20px;
+            }
+
+            .result .icon {
+                font-size: 3.5rem;
+            }
+
+            /* Avoid cropping the bumper text on phones */
+            #intro.playing video {
+                object-fit: contain;
+            }
+        }
+
+        /* Result-state icons render as inline SVG (no emoji icons) */
+        .result .icon svg {
+            width: 72px;
+            height: 72px;
+            stroke: currentColor;
+        }
+
+        /* Visible keyboard focus for buttons */
+        button:focus-visible {
+            outline: 3px solid #38ef7d;
+            outline-offset: 3px;
+        }
+
+        /* Respect user's motion preferences (a11y) */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .particle,
+            .confetti,
+            .sparkle,
+            .warning-particle,
+            .green-flash,
+            .red-flash {
+                display: none !important;
+            }
+        }
+        /* ============================================================
+           REFERENCE THEME — match rekap-proximiti dark-navy blueprint
+           ============================================================ */
+        :root {
+            --ink: #e6edf5;
+            --cream: #060e1a;
+            --rust: #7d0c00;
+            --rust-bright: #c85a52;
+            --moss: #104f7b;
+            --sand: #13243a;
+            --pale: #182d46;
+            --line: #2a445f;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(circle at 50% -10%, #16304d 0%, #060e1a 58%);
+            color: var(--ink);
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image: url("white-paper-texture_1194-2301.avif");
+            background-size: cover;
+            background-position: center;
+            mix-blend-mode: overlay;
+            opacity: 0.5;
+        }
+
+        /* Card surface: navy with hairline inner frame + soft depth */
+        .container {
+            background: var(--sand);
+            border-radius: 24px;
+            box-shadow:
+                inset 0 0 0 1px rgba(230, 237, 245, 0.07),
+                0 26px 60px rgba(4, 13, 24, 0.7);
+        }
+
+        .container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            background-image: url("white-paper-texture_1194-2301.avif");
+            background-size: cover;
+            background-position: center;
+            mix-blend-mode: overlay;
+            opacity: 0.32;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .banner,
+        .content { position: relative; z-index: 1; }
+        .content { color: var(--ink); }
+
+        .header h1 {
+            color: var(--ink);
+            text-shadow: 0 0 22px rgba(74, 144, 194, 0.35);
+        }
+
+        .header h2 { color: #6ea3cf; }
+        .header p { color: rgba(230, 237, 245, 0.6); }
+
+        /* Labels: rust uppercase blueprint style */
+        label {
+            color: var(--rust-bright);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        input,
+        select {
+            background-color: var(--pale);
+            border: 1.5px solid var(--line);
+            color: var(--ink);
+            color-scheme: dark;
+        }
+
+        input::placeholder { color: rgba(230, 237, 245, 0.38); }
+
+        select {
+            background-color: var(--pale);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2393b4d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+
+        input:hover,
+        select:hover {
+            border-color: var(--moss);
+            background-color: var(--pale);
+        }
+
+        input:focus,
+        select:focus {
+            border-color: var(--moss);
+            background-color: #1d3656;
+            box-shadow: 0 0 0 4px rgba(16, 79, 123, 0.3);
+        }
+
+        /* Primary CTA: PROXIMITI red */
+        button {
+            background: linear-gradient(135deg, #8c0f02 0%, #c1272d 100%);
+            box-shadow: 0 10px 26px -8px rgba(193, 39, 45, 0.55);
+        }
+
+        button:hover { box-shadow: 0 16px 36px -8px rgba(193, 39, 45, 0.65); }
+
+        /* === Result card: rekap-style navy panel, no post-click animation === */
+        .result,
+        .result.lolos,
+        .result.remedial,
+        .result.error {
+            background: var(--sand);
+            color: var(--ink);
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            box-shadow:
+                inset 0 0 0 1px rgba(230, 237, 245, 0.08),
+                0 16px 38px rgba(4, 13, 24, 0.55);
+            animation: none;
+        }
+
+        /* status accent bar (left) */
+        .result::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--moss);
+        }
+
+        .result.lolos::before { background: #11d660; }
+        .result.remedial::before { background: #c1272d; }
+
+        /* blueprint corner bracket (top-right) */
+        .result::after {
+            content: '';
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 16px;
+            height: 16px;
+            border-top: 2px solid rgba(110, 163, 207, 0.55);
+            border-right: 2px solid rgba(110, 163, 207, 0.55);
+        }
+
+        .result .icon { animation: none; color: var(--moss); }
+        .result.lolos .icon { color: #38ef7d; }
+        .result.remedial .icon { color: #ff6b6b; }
+        .result h2 { color: var(--ink); }
+        .result > p { color: rgba(230, 237, 245, 0.72); }
+
+        /* status badges -> clean pills, no animation */
+        .lolos-badge,
+        .remedial-badge {
+            animation: none;
+            box-shadow: none;
+            border-radius: 999px;
+        }
+
+        .remedial-badge { background: #c1272d; color: #fff; }
+
+        /* detail panels */
+        .info-box {
+            background: var(--pale);
+            backdrop-filter: none;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            animation: none;
+        }
+
+        .info-box strong { color: rgba(230, 237, 245, 0.5); }
+        .info-box p:hover { background: rgba(255, 255, 255, 0.05); }
+
+        .remedial-box {
+            background: var(--pale);
+            border: 1px dashed var(--line);
+            border-radius: 14px;
+            animation: none;
+        }
+
+        .gt-contact {
+            background: #0f1d30;
+            color: var(--ink);
+            border: 1px solid var(--line);
+            box-shadow: none;
+        }
+        /* === Intro: polished click-to-start screen, then bumper plays === */
+        #intro {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: radial-gradient(circle at 50% 35%, #16304d 0%, #060e1a 72%);
+        }
+
+        #intro::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("white-paper-texture_1194-2301.avif");
+            background-size: cover;
+            background-position: center;
+            mix-blend-mode: overlay;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .intro-card {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 440px;
+            background: var(--sand);
+            border-radius: 24px;
+            overflow: hidden;
+            padding: 26px 26px 32px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            box-shadow:
+                inset 0 0 0 1px rgba(230, 237, 245, 0.07),
+                0 26px 60px rgba(4, 13, 24, 0.7);
+            animation: containerSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+
+
+        .intro-banner {
+            width: 100%;
+            display: block;
+            border-radius: 16px;
+            box-shadow: 0 14px 32px rgba(4, 13, 24, 0.55);
+        }
+
+        .intro-sub {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(230, 237, 245, 0.55);
+        }
+
+        #start-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            background: linear-gradient(135deg, #8c0f02 0%, #c1272d 100%);
+            border: none;
+            border-radius: 999px;
+            width: auto;
+            padding: 12px 26px 12px 14px;
+            cursor: pointer;
+            color: #fff;
+            box-shadow: 0 12px 30px -8px rgba(193, 39, 45, 0.6);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            animation: none;
+        }
+
+        #start-btn::before { display: none; }
+
+        #start-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 40px -8px rgba(193, 39, 45, 0.75);
+        }
+
+        #start-btn .play-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.16);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: none;
+        }
+
+        #start-btn .play-circle svg {
+            width: 18px;
+            height: 18px;
+            fill: #fff;
+            margin-left: 3px;
+        }
+
+        #start-btn .label {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        #intro video {
+            display: none;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        #intro.playing { padding: 0; background: #000; }
+        #intro.playing::before { display: none; }
+        #intro.playing .intro-card { display: none; }
+        #intro.playing video {
+            display: block;
+            animation: bumperIn 0.6s ease 0.35s both;
+        }
+
+        #skip-btn {
+            display: none;
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            z-index: 3;
+            width: auto;
+            align-items: center;
+            gap: 4px;
+            padding: 5px 11px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            opacity: 0;
+            transition: background 0.25s ease, color 0.25s ease, opacity 0.4s ease;
+        }
+        #skip-btn svg { width: 11px; height: 11px; fill: currentColor; }
+        #skip-btn:hover {
+            background: rgba(255, 255, 255, 0.22);
+            color: #fff;
+        }
+        #intro.playing #skip-btn {
+            display: inline-flex;
+            animation: skipIn 0.5s ease 0.5s forwards;
+        }
+        @keyframes skipIn { to { opacity: 1; } }
+
+        @keyframes introCardOut {
+            from { transform: translateY(0) scale(1); }
+            to { transform: translateY(-135%) scale(0.94); }
+        }
+
+        @keyframes bumperIn {
+            from { opacity: 0; transform: scale(1.06); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        #intro.hide {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        /* Hold the form hidden until the bumper finishes, then play its entrance */
+        .container { animation: none; opacity: 0; }
+
+        body.revealed .container {
+            opacity: 1;
+            animation: revealRise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @keyframes revealRise {
+            0% { opacity: 0; transform: translateY(46px) scale(0.94); filter: blur(8px); }
+            100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        }
+        /* === Logo loading + refined header === */
+        #loadingBox {
+            text-align: center;
+            padding: 30px 10px 4px;
+        }
+        .spinner-logo {
+            width: 76px;
+            height: 76px;
+            display: block;
+            margin: 0 auto 16px;
+            animation: spin 1.5s linear infinite;
+        }
+        #loadingBox p {
+            color: rgba(230, 237, 245, 0.6);
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+        }
+        .header .eyebrow {
+            display: inline-block;
+            font-size: 0.64rem;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--rust-bright);
+            margin-bottom: 12px;
+            padding: 5px 14px;
+            border: 1px solid rgba(200, 82, 74, 0.4);
+            border-radius: 999px;
+        }
+        .header h1 {
+            font-size: 1.75rem;
+            line-height: 1.18;
+        }
+        .header p {
+            margin-top: 10px;
+            font-size: 0.88rem;
+            line-height: 1.55;
+            max-width: 32ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="intro">
+        <div class="intro-card">
+            <img src="banner.png" alt="PROXIMITI 2026" class="intro-banner">
+            <p class="intro-sub">Status Performa Peserta &middot; PROXIMITI 2026</p>
+            <button id="start-btn" type="button" aria-label="Start">
+                <span class="play-circle">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+                <span class="label">Click to Start</span>
+            </button>
+        </div>
+        <video id="bumper" playsinline preload="auto">
+            <source src="bumper.mp4" type="video/mp4">
+        </video>
+        <button id="skip-btn" type="button" aria-label="Lewati intro">
+            <span>Skip</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5v14l9-7zM16 5h3v14h-3z"/></svg>
+        </button>
+    </div>
+    <script>
+        (function () {
+            var intro = document.getElementById('intro');
+            var v = document.getElementById('bumper');
+            var startBtn = document.getElementById('start-btn');
+            function done() {
+                if (!intro || intro.classList.contains('hide')) return;
+                intro.classList.add('hide');
+                setTimeout(function () {
+                    if (intro) intro.remove();
+                    document.body.classList.add('revealed');
+                }, 600);
+            }
+            function start() {
+                intro.classList.add('playing');
+                setTimeout(function () {
+                    v.muted = false;
+                    var p = v.play();
+                    if (p && p.catch) p.catch(function () { v.muted = true; v.play(); });
+                }, 350);
+            }
+            if (startBtn) startBtn.addEventListener('click', start);
+            var skipBtn = document.getElementById('skip-btn');
+            if (skipBtn) skipBtn.addEventListener('click', done);
+            if (v) {
+                v.addEventListener('ended', done);
+                v.addEventListener('error', done);
+            }
+        })();
+    </script>
+
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="container">
+        <img src="banner.png" alt="PROXIMITI 2026" class="banner">
+
+        <div class="content">
+            <div class="header">
+                <span class="eyebrow">PROXIMITI 2026</span>
+                <h1>Status Performa Peserta</h1>
+                <p>Masukkan NIM &amp; Legion kamu untuk melihat status performa sementara.</p>
+            </div>
+
+            <form id="checkForm">
+                <div class="form-group">
+                    <label for="nim">NIM (Nomor Induk Mahasiswa)</label>
+                    <input type="text" id="nim" placeholder="Contoh: 676767676767" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="legion">Legion</label>
+                    <select id="legion" required>
+                        <option value="">-- Pilih Legion --</option>
+                        <option value="LEGION OF AMON-RA">Legion of Amon-Ra</option>
+                        <option value="LEGION OF ANKHARA">Legion of Ankhara</option>
+                        <option value="LEGION OF ANUBIS">Legion of Anubis</option>
+                        <option value="LEGION OF HATHOR">Legion of Hathor</option>
+                        <option value="LEGION OF NEITH">Legion of Neith</option>
+                        <option value="LEGION OF NEPTHYS">Legion of Nepthys</option>
+                        <option value="LEGION OF ORION">Legion of Orion</option>
+                        <option value="LEGION OF OSIRIS">Legion of Osiris</option>
+                        <option value="LEGION OF SPINX">Legion of Spinx</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="submitBtn">Check your Performance Status</button>
+            </form>
+
+            <div id="loadingBox" style="display:none;">
+                <img src="logo-proximiti.png" alt="Memuat" class="spinner-logo">
+                <p>Mengecek performa kamu...</p>
+            </div>
+
+            <div id="result" class="result">
+                <div class="icon" id="resultIcon"></div>
+                <span id="statusBadge"></span>
+                <h2 id="resultTitle"></h2>
+                <p id="resultMessage"></p>
+                <div class="info-box" id="infoBox" style="display: none;">
+                    <p><strong>Nama</strong> <span id="infoNama"></span></p>
+                    <p><strong>NIM</strong> <span id="infoNim"></span></p>
+                    <p><strong>Legion</strong> <span id="infoLegion"></span></p>
+                    <p><strong>Status</strong> <span id="infoStatus"></span></p>
+                </div>
+                <div class="remedial-box" id="remedialBox" style="display: none;">
+                    <h3>Langkah Selanjutnya</h3>
+                    <p>Hubungi GT Legion kamu melalui <strong>WhatsApp Private Message</strong> untuk info cara memperbaiki status performa kamu.</p>
+                    <div class="gt-contact" id="gtContact"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // SVG result-state icons (Lucide style) — no emoji icons
+        const ICONS = {
+            lolos: '<svg viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+            remedial: '<svg viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+            notFound: '<svg viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+            error: '<svg viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
+        };
+
+        // Data GT per Legion
+        const dataGT = {
+            "LEGION OF AMON-RA": "Hubungi GT Legion Amon-Ra via WA PM",
+            "LEGION OF ANKHARA": "Hubungi GT Legion Ankhara via WA PM",
+            "LEGION OF ANUBIS": "Hubungi GT Legion Anubis via WA PM",
+            "LEGION OF HATHOR": "Hubungi GT Legion Hathor via WA PM",
+            "LEGION OF NEITH": "Hubungi GT Legion Neith via WA PM",
+            "LEGION OF NEPTHYS": "Hubungi GT Legion Nepthys via WA PM",
+            "LEGION OF ORION": "Hubungi GT Legion Orion via WA PM",
+            "LEGION OF OSIRIS": "Hubungi GT Legion Osiris via WA PM",
+            "LEGION OF SPINX": "Hubungi GT Legion Spinx via WA PM"
+        };
+
+        document.getElementById('checkForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const nim = document.getElementById('nim').value.trim();
+            const legion = document.getElementById('legion').value;
+            const submitBtn = document.getElementById('submitBtn');
+
+            const resultDiv = document.getElementById('result');
+            const resultIcon = document.getElementById('resultIcon');
+            const resultTitle = document.getElementById('resultTitle');
+            const resultMessage = document.getElementById('resultMessage');
+            const statusBadge = document.getElementById('statusBadge');
+            const infoBox = document.getElementById('infoBox');
+            const remedialBox = document.getElementById('remedialBox');
+            const gtContact = document.getElementById('gtContact');
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Checking...';
+            resultDiv.style.display = 'none';
+            document.getElementById('loadingBox').style.display = 'block';
+
+            try {
+                const response = await fetch('/api/check', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ nim, legion })
+                });
+
+                const data = await response.json();
+
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Check your Performance Status';
+
+                resultDiv.style.display = 'block';
+                resultDiv.className = 'result';
+                remedialBox.style.display = 'none';
+                statusBadge.className = '';
+                statusBadge.textContent = '';
+
+                if (response.ok && data.peserta) {
+                    const peserta = data.peserta;
+                    infoBox.style.display = 'block';
+                    document.getElementById('infoNim').textContent = peserta.nim;
+                    document.getElementById('infoNama').textContent = peserta.nama;
+                    document.getElementById('infoLegion').textContent = peserta.legion;
+
+                    if (peserta.lolos_kkm) {
+                        resultDiv.classList.add('lolos');
+                        resultIcon.innerHTML = ICONS.lolos;
+                        statusBadge.className = 'lolos-badge';
+                        statusBadge.textContent = 'STATUS HIJAU';
+                        resultTitle.textContent = 'Mantap, Pertahankan!';
+                        resultMessage.textContent = 'Status performa sementara kamu Hijau. Keren! Terus jaga konsistensi dan semangatmu di kegiatan PROXIMITI selanjutnya ya.';
+                        document.getElementById('infoStatus').textContent = 'Hijau';
+                    } else {
+                        resultDiv.classList.add('remedial');
+                        resultIcon.innerHTML = ICONS.remedial;
+                        statusBadge.className = 'remedial-badge';
+                        statusBadge.textContent = 'STATUS MERAH';
+                        resultTitle.textContent = 'Yuk, Tingkatkan!';
+                        resultMessage.textContent = 'Status performa sementara kamu Merah. Kalau kamu mau memperbaiki status performa kamu, silakan hubungi GT kamu ya.';
+                        document.getElementById('infoStatus').textContent = 'Merah';
+
+                        remedialBox.style.display = 'block';
+                        gtContact.textContent = dataGT[peserta.legion];
+                    }
+                } else {
+                    resultDiv.classList.add('error');
+                    statusBadge.className = '';
+                    statusBadge.textContent = '';
+                    resultIcon.innerHTML = ICONS.notFound;
+                    resultTitle.textContent = 'DATA TIDAK DITEMUKAN';
+                    resultMessage.textContent = 'Pastikan NIM dan Legion yang kamu masukkan sudah benar. Jika masih bermasalah, hubungi GT masing-masing.';
+                    infoBox.style.display = 'none';
+                }
+            } catch (err) {
+                console.error('Error:', err);
+
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Check your Performance Status';
+
+                resultDiv.style.display = 'block';
+                resultDiv.className = 'result error';
+                statusBadge.className = '';
+                statusBadge.textContent = '';
+                resultIcon.innerHTML = ICONS.error;
+                resultTitle.textContent = 'TERJADI KESALAHAN';
+                resultMessage.textContent = 'Gagal terhubung ke server. Silakan coba lagi nanti.';
+                infoBox.style.display = 'none';
+                remedialBox.style.display = 'none';
+            }
+
+            document.getElementById('loadingBox').style.display = 'none';
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return false;
+        });
+    </script>
+</body>
+
+</html>
