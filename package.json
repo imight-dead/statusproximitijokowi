@@ -1,0 +1,9 @@
+{
+  "name": "tracking-performa-proximiti",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  }
+}
