@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Status Performa Peserta - PROXIMITI 2026</title>
+
+    <link rel="icon" type="image/png" href="logo-proximiti.png">
+    <link rel="shortcut icon" type="image/png" href="logo-proximiti.png">
+    <link rel="apple-touch-icon" href="logo-proximiti.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -413,6 +418,7 @@
         }
 
 
+
         .info-box p {
             padding: 8px 12px;
             margin: 4px -12px;
@@ -423,6 +429,9 @@
         .info-box p:hover {
             background: rgba(255, 255, 255, 0.1);
         }
+
+
+
 
         .lolos-badge {
             display: inline-block;
@@ -437,6 +446,11 @@
             text-transform: uppercase;
             box-shadow: 0 4px 20px -4px rgba(56, 239, 125, 0.5);
         }
+
+
+
+
+
 
         .remedial-badge {
             display: inline-block;
@@ -469,22 +483,26 @@
                 font-size: 3.5rem;
             }
 
+       
             #intro.playing video {
                 object-fit: contain;
             }
         }
 
+      
         .result .icon svg {
             width: 72px;
             height: 72px;
             stroke: currentColor;
         }
 
+    
         button:focus-visible {
             outline: 3px solid #38ef7d;
             outline-offset: 3px;
         }
 
+       
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -501,6 +519,7 @@
                 display: none !important;
             }
         }
+        
         :root {
             --ink: #e6edf5;
             --cream: #060e1a;
@@ -530,6 +549,8 @@
             mix-blend-mode: overlay;
             opacity: 0.5;
         }
+
+      
         .container {
             background: var(--sand);
             border-radius: 24px;
@@ -564,6 +585,7 @@
         .header h2 { color: #6ea3cf; }
         .header p { color: rgba(230, 237, 245, 0.6); }
 
+   
         label {
             color: var(--rust-bright);
             font-size: 0.72rem;
@@ -600,6 +622,7 @@
             box-shadow: 0 0 0 4px rgba(16, 79, 123, 0.3);
         }
 
+   
         button {
             background: linear-gradient(135deg, #8c0f02 0%, #c1272d 100%);
             box-shadow: 0 10px 26px -8px rgba(193, 39, 45, 0.55);
@@ -607,6 +630,7 @@
 
         button:hover { box-shadow: 0 16px 36px -8px rgba(193, 39, 45, 0.65); }
 
+  
         .result,
         .result.lolos,
         .result.remedial,
@@ -622,6 +646,7 @@
             animation: none;
         }
 
+
         .result::before {
             content: '';
             position: absolute;
@@ -635,6 +660,7 @@
         .result.lolos::before { background: #11d660; }
         .result.remedial::before { background: #c1272d; }
 
+   
         .result::after {
             content: '';
             position: absolute;
@@ -652,6 +678,7 @@
         .result h2 { color: var(--ink); }
         .result > p { color: rgba(230, 237, 245, 0.72); }
 
+      
         .lolos-badge,
         .remedial-badge {
             animation: none;
@@ -661,6 +688,7 @@
 
         .remedial-badge { background: #c1272d; color: #fff; }
 
+    
         .info-box {
             background: var(--pale);
             backdrop-filter: none;
@@ -685,6 +713,7 @@
             border: 1px solid var(--line);
             box-shadow: none;
         }
+
         #intro {
             position: fixed;
             inset: 0;
@@ -727,6 +756,8 @@
                 0 26px 60px rgba(4, 13, 24, 0.7);
             animation: containerSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
+
+
 
         .intro-banner {
             width: 100%;
@@ -1039,6 +1070,7 @@
             notFound: '<svg viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
             error: '<svg viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
         };
+
         const dataGT = {
             "LEGION OF AMON-RA": "Hubungi GT Legion Amon-Ra via WA PM",
             "LEGION OF ANKHARA": "Hubungi GT Legion Ankhara via WA PM",
@@ -1106,15 +1138,15 @@
                         statusBadge.className = 'lolos-badge';
                         statusBadge.textContent = 'STATUS HIJAU';
                         resultTitle.textContent = 'Mantap, Pertahankan!';
-                        resultMessage.textContent = 'Status performa sementara kamu Hijau. Keren!!! Terus jaga konsistensi dan semangatmu di kegiatan PROXIMITI selanjutnya ya!!';
+                        resultMessage.textContent = 'Status performa sementara kamu Hijau. Keren! Terus jaga konsistensi dan semangatmu di kegiatan PROXIMITI selanjutnya ya.';
                         document.getElementById('infoStatus').textContent = 'Hijau';
                     } else {
                         resultDiv.classList.add('remedial');
                         resultIcon.innerHTML = ICONS.remedial;
                         statusBadge.className = 'remedial-badge';
                         statusBadge.textContent = 'STATUS MERAH';
-                        resultTitle.textContent = 'Yuk, Perbaiki!';
-                        resultMessage.textContent = 'Status performa sementara kamu Merah. Perbaiki status performa kamu dengan menghubungi GT kamu ya.';
+                        resultTitle.textContent = 'Yuk, Tingkatkan!';
+                        resultMessage.textContent = 'Status performa sementara kamu Merah. Kalau kamu mau memperbaiki status performa kamu, silakan hubungi GT kamu ya.';
                         document.getElementById('infoStatus').textContent = 'Merah';
 
                         remedialBox.style.display = 'block';
