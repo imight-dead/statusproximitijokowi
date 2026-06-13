@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Status Performa Peserta - PROXIMITI 2026</title>
+
+    <link rel="icon" type="image/png" href="logo-proximiti.png">
+    <link rel="shortcut icon" type="image/png" href="logo-proximiti.png">
+    <link rel="apple-touch-icon" href="logo-proximiti.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -414,7 +419,6 @@
 
 
 
-        /* Hover interactions for info items */
         .info-box p {
             padding: 8px 12px;
             margin: 4px -12px;
@@ -462,7 +466,6 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
-        /* Responsive */
         @media (max-width: 520px) {
             .content {
                 padding: 24px 24px 32px;
@@ -480,26 +483,26 @@
                 font-size: 3.5rem;
             }
 
-            /* Avoid cropping the bumper text on phones */
+       
             #intro.playing video {
                 object-fit: contain;
             }
         }
 
-        /* Result-state icons render as inline SVG (no emoji icons) */
+      
         .result .icon svg {
             width: 72px;
             height: 72px;
             stroke: currentColor;
         }
 
-        /* Visible keyboard focus for buttons */
+    
         button:focus-visible {
             outline: 3px solid #38ef7d;
             outline-offset: 3px;
         }
 
-        /* Respect user's motion preferences (a11y) */
+       
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -516,9 +519,7 @@
                 display: none !important;
             }
         }
-        /* ============================================================
-           REFERENCE THEME — match rekap-proximiti dark-navy blueprint
-           ============================================================ */
+        
         :root {
             --ink: #e6edf5;
             --cream: #060e1a;
@@ -549,7 +550,7 @@
             opacity: 0.5;
         }
 
-        /* Card surface: navy with hairline inner frame + soft depth */
+      
         .container {
             background: var(--sand);
             border-radius: 24px;
@@ -584,7 +585,7 @@
         .header h2 { color: #6ea3cf; }
         .header p { color: rgba(230, 237, 245, 0.6); }
 
-        /* Labels: rust uppercase blueprint style */
+   
         label {
             color: var(--rust-bright);
             font-size: 0.72rem;
@@ -621,7 +622,7 @@
             box-shadow: 0 0 0 4px rgba(16, 79, 123, 0.3);
         }
 
-        /* Primary CTA: PROXIMITI red */
+   
         button {
             background: linear-gradient(135deg, #8c0f02 0%, #c1272d 100%);
             box-shadow: 0 10px 26px -8px rgba(193, 39, 45, 0.55);
@@ -629,7 +630,7 @@
 
         button:hover { box-shadow: 0 16px 36px -8px rgba(193, 39, 45, 0.65); }
 
-        /* === Result card: rekap-style navy panel, no post-click animation === */
+  
         .result,
         .result.lolos,
         .result.remedial,
@@ -645,7 +646,7 @@
             animation: none;
         }
 
-        /* status accent bar (left) */
+
         .result::before {
             content: '';
             position: absolute;
@@ -659,7 +660,7 @@
         .result.lolos::before { background: #11d660; }
         .result.remedial::before { background: #c1272d; }
 
-        /* blueprint corner bracket (top-right) */
+   
         .result::after {
             content: '';
             position: absolute;
@@ -677,7 +678,7 @@
         .result h2 { color: var(--ink); }
         .result > p { color: rgba(230, 237, 245, 0.72); }
 
-        /* status badges -> clean pills, no animation */
+      
         .lolos-badge,
         .remedial-badge {
             animation: none;
@@ -687,7 +688,7 @@
 
         .remedial-badge { background: #c1272d; color: #fff; }
 
-        /* detail panels */
+    
         .info-box {
             background: var(--pale);
             backdrop-filter: none;
@@ -712,7 +713,7 @@
             border: 1px solid var(--line);
             box-shadow: none;
         }
-        /* === Intro: polished click-to-start screen, then bumper plays === */
+
         #intro {
             position: fixed;
             inset: 0;
@@ -890,7 +891,6 @@
             transition: opacity 0.5s ease, visibility 0.5s ease;
         }
 
-        /* Hold the form hidden until the bumper finishes, then play its entrance */
         .container { animation: none; opacity: 0; }
 
         body.revealed .container {
@@ -902,7 +902,6 @@
             0% { opacity: 0; transform: translateY(46px) scale(0.94); filter: blur(8px); }
             100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
         }
-        /* === Logo loading + refined header === */
         #loadingBox {
             text-align: center;
             padding: 30px 10px 4px;
@@ -1065,7 +1064,6 @@
     </div>
 
     <script>
-        // SVG result-state icons (Lucide style) — no emoji icons
         const ICONS = {
             lolos: '<svg viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
             remedial: '<svg viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
@@ -1073,7 +1071,6 @@
             error: '<svg viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
         };
 
-        // Data GT per Legion
         const dataGT = {
             "LEGION OF AMON-RA": "Hubungi GT Legion Amon-Ra via WA PM",
             "LEGION OF ANKHARA": "Hubungi GT Legion Ankhara via WA PM",
@@ -1103,7 +1100,6 @@
             const remedialBox = document.getElementById('remedialBox');
             const gtContact = document.getElementById('gtContact');
 
-            // Loading state
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Checking...';
             resultDiv.style.display = 'none';
@@ -1120,7 +1116,6 @@
 
                 const data = await response.json();
 
-                // Reset button
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = 'Check your Performance Status';
 
