@@ -1031,7 +1031,7 @@
                         <option value="LEGION OF NEPTHYS">Legion of Nepthys</option>
                         <option value="LEGION OF ORION">Legion of Orion</option>
                         <option value="LEGION OF OSIRIS">Legion of Osiris</option>
-                        <option value="LEGION OF SPINX">Legion of Spinx</option>
+                        <option value="LEGION OF SPHINX">Legion of Sphinx</option>
                     </select>
                 </div>
 
@@ -1056,7 +1056,7 @@
                 </div>
                 <div class="remedial-box" id="remedialBox" style="display: none;">
                     <h3>Langkah Selanjutnya</h3>
-                    <p>Hubungi GT Legion kamu melalui <strong>WhatsApp Private Message</strong> untuk info cara memperbaiki status performa kamu.</p>
+                    <p>Hubungi DET Legion kamu melalui <strong>WhatsApp Private Message</strong> untuk info cara memperbaiki status performa kamu.</p>
                     <div class="gt-contact" id="gtContact"></div>
                 </div>
             </div>
@@ -1071,16 +1071,16 @@
             error: '<svg viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
         };
 
-        const dataGT = {
-            "LEGION OF AMON-RA": "Hubungi GT Legion Amon-Ra via WA PM",
-            "LEGION OF ANKHARA": "Hubungi GT Legion Ankhara via WA PM",
-            "LEGION OF ANUBIS": "Hubungi GT Legion Anubis via WA PM",
-            "LEGION OF HATHOR": "Hubungi GT Legion Hathor via WA PM",
-            "LEGION OF NEITH": "Hubungi GT Legion Neith via WA PM",
-            "LEGION OF NEPTHYS": "Hubungi GT Legion Nepthys via WA PM",
-            "LEGION OF ORION": "Hubungi GT Legion Orion via WA PM",
-            "LEGION OF OSIRIS": "Hubungi GT Legion Osiris via WA PM",
-            "LEGION OF SPINX": "Hubungi GT Legion Spinx via WA PM"
+        const dataDET = {
+            "LEGION OF AMON-RA": "Hubungi DET Legion Amon-Ra via WA PM",
+            "LEGION OF ANKHARA": "Hubungi DET Legion Ankhara via WA PM",
+            "LEGION OF ANUBIS": "Hubungi DET Legion Anubis via WA PM",
+            "LEGION OF HATHOR": "Hubungi DET Legion Hathor via WA PM",
+            "LEGION OF NEITH": "Hubungi DET Legion Neith via WA PM",
+            "LEGION OF NEPTHYS": "Hubungi DET Legion Nepthys via WA PM",
+            "LEGION OF ORION": "Hubungi DET Legion Orion via WA PM",
+            "LEGION OF OSIRIS": "Hubungi DET Legion Osiris via WA PM",
+            "LEGION OF SPHINX": "Hubungi DET Legion Sphinx via WA PM"
         };
 
         document.getElementById('checkForm').addEventListener('submit', async function (e) {
@@ -1146,11 +1146,11 @@
                         statusBadge.className = 'remedial-badge';
                         statusBadge.textContent = 'STATUS MERAH';
                         resultTitle.textContent = 'Yuk, Tingkatkan!';
-                        resultMessage.textContent = 'Status performa sementara kamu Merah. Kalau kamu mau memperbaiki status performa kamu, silakan hubungi GT kamu ya.';
+                        resultMessage.textContent = 'Status performa sementara kamu Merah. Kalau kamu mau memperbaiki status performa kamu, silakan hubungi DET kamu ya.';
                         document.getElementById('infoStatus').textContent = 'Merah';
 
                         remedialBox.style.display = 'block';
-                        gtContact.textContent = dataGT[peserta.legion];
+                        gtContact.textContent = dataDET[peserta.legion];
                     }
                 } else {
                     resultDiv.classList.add('error');
@@ -1158,7 +1158,7 @@
                     statusBadge.textContent = '';
                     resultIcon.innerHTML = ICONS.notFound;
                     resultTitle.textContent = 'DATA TIDAK DITEMUKAN';
-                    resultMessage.textContent = 'Pastikan NIM dan Legion yang kamu masukkan sudah benar. Jika masih bermasalah, hubungi GT masing-masing.';
+                    resultMessage.textContent = 'Pastikan NIM dan Legion yang kamu masukkan sudah benar. Jika masih bermasalah, hubungi DET masing-masing.';
                     infoBox.style.display = 'none';
                 }
             } catch (err) {
